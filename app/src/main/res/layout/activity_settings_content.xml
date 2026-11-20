@@ -925,7 +925,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="开源项目 · 需自行配置 LibreTV / MoonTV 兼容服务端"
+                android:text="开源项目 · 需自行配置 MoonTV / MoonTVPlus 服务端"
                 android:textColor="@color/accent"
                 android:textSize="12sp" />
 

@@ -24,7 +24,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
- * TV PLUS (LibreTV/MoonTV 兼容) 服务端接口封装。
+ * TV PLUS (MoonTV/MoonTVPlus 兼容) 服务端接口封装。
  */
 public class Api {
 
