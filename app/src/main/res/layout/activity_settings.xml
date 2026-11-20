@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 手机 / 平板：设置页占满可用宽度 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <include
+        layout="@layout/activity_settings_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

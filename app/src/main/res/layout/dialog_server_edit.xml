@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_cast_panel"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="22dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="22dp"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="新增服务器"
+            android:textColor="@color/text"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="服务器名称"
+            android:textColor="@color/text2"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/dialogName"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/bg_input"
+            android:hint="例如：家里 NAS / 公司服务器"
+            android:inputType="text"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:singleLine="true"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text2"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="服务器地址"
+            android:textColor="@color/text2"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/dialogUrl"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/bg_input"
+            android:hint="http://服务器地址:端口"
+            android:inputType="textUri"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:singleLine="true"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text2"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账号"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/dialogUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bg_input"
+                    android:hint="账号"
+                    android:inputType="text"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text2"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="密码"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/dialogPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bg_input"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text2"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialogCancel"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/text2"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dialogSave"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="保存并登录"
+                android:textColor="@color/text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

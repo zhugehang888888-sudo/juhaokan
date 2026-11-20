@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中且获得焦点：柔和底色 + 底部指示条，不画绿框，避免“像按钮” -->
+    <item android:state_focused="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#17212C" />
+                    <corners android:radius="10dp" />
+                </shape>
+            </item>
+            <item
+                android:height="3dp"
+                android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/accent" />
+                    <corners
+                        android:topLeftRadius="2dp"
+                        android:topRightRadius="2dp"
+                        android:bottomLeftRadius="0dp"
+                        android:bottomRightRadius="0dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <!-- 选中未聚焦：仅底部指示条 -->
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/transparent" />
+                </shape>
+            </item>
+            <item
+                android:height="3dp"
+                android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/accent" />
+                    <corners
+                        android:topLeftRadius="2dp"
+                        android:topRightRadius="2dp"
+                        android:bottomLeftRadius="0dp"
+                        android:bottomRightRadius="0dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

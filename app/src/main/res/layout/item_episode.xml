@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/epText"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/bg_episode"
+    android:ellipsize="end"
+    android:focusable="true"
+    android:gravity="center"
+    android:maxLines="1"
+    android:textColor="@color/text"
+    android:textSize="13sp" />

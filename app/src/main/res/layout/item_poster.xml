@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_card_focus"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <com.oriontv.plus.PosterFrame
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_poster"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/surface2"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/posterFallback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/text2"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="7dp"
+            android:background="@drawable/bg_badge"
+            android:paddingStart="8dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="3dp"
+            android:textColor="#1B1204"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/selectMark"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_gravity="top|start"
+            android:layout_margin="7dp"
+            android:background="@drawable/bg_select_mark"
+            android:gravity="center"
+            android:text="✓"
+            android:textColor="#1B1204"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </com.oriontv.plus.PosterFrame>
+
+    <TextView
+        android:id="@+id/posterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/text"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/posterSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/text2"
+        android:textSize="11sp"
+        android:visibility="gone" />
+</LinearLayout>

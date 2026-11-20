@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentTransitions">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="PlayerTheme" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+    <!-- 自定义弹窗：透明窗体 + 自绘圆角面板，遥控器/鼠标/触屏通用 -->
+    <style name="DialogTheme" parent="@android:style/Theme.Material.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:backgroundDimAmount">0.62</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <!-- 设置页选择弹窗：深色圆角，避免系统默认浅灰弹窗与深色界面割裂 -->
+    <style name="DarkDialog" parent="@android:style/Theme.Material.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="android:textColorSecondary">@color/text2</item>
+        <item name="android:backgroundDimAmount">0.66</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSub">
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="NavItem">
+        <item name="android:textColor">@color/nav_text</item>
+        <item name="android:textSize">@dimen/nav_text_size</item>
+        <item name="android:paddingStart">@dimen/nav_pad_h</item>
+        <item name="android:paddingEnd">@dimen/nav_pad_h</item>
+        <item name="android:paddingTop">@dimen/nav_pad_v</item>
+        <item name="android:paddingBottom">@dimen/nav_pad_v</item>
+        <item name="android:drawablePadding">@dimen/nav_drawable_pad</item>
+        <item name="android:drawableTint">@color/nav_text</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:background">@drawable/bg_rail_item</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
+    <!-- 设置页：分组标题 / 卡片行 / 行内文字 -->
+    <style name="SettingGroupTitle">
+        <item name="android:textColor">#7E8C99</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:paddingStart">6dp</item>
+    </style>
+
+    <style name="SettingRow">
+        <item name="android:background">@drawable/bg_setting_row</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/setting_row_min_height</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+
+    <style name="SettingTitle">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="SettingSub">
+        <item name="android:textColor">#76838F</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="SettingValue">
+        <item name="android:textColor">@color/value</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="Chip">
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:background">@drawable/bg_chip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+    <style name="ActionButton">
+        <item name="android:textColor">@color/btn_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@drawable/bg_btn</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginEnd">12dp</item>
+    </style>
+
+    <style name="ActionButtonPrimary" parent="ActionButton">
+        <item name="android:textColor">@color/btn_primary_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:background">@drawable/bg_btn_primary</item>
+    </style>
+
+    <style name="InfoChip">
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@drawable/bg_info_chip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <!-- 手机小屏用的紧凑按钮 -->
+    <style name="ActionButtonCompact" parent="ActionButton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="ActionButtonPrimaryCompact" parent="ActionButtonCompact">
+        <item name="android:textColor">@color/btn_primary_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_btn_primary</item>
+    </style>
+</resources>

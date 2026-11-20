@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/liveRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:focusable="true">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/livePlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:use_controller="false"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+    <!-- 系统播放器内核（VideoView） -->
+    <VideoView
+        android:id="@+id/liveSystemPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:visibility="gone" />
+
+    <!-- 触屏：点击画面显示/隐藏频道面板（在 Activity.dispatchTouchEvent 里统一处理） -->
+    <View
+        android:id="@+id/liveTouchLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <LinearLayout
+        android:id="@+id/channelBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_panel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="22dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/liveBigNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="54dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/text"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text2"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/liveTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/livePanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingTop="22dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="108dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/groupPanel"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_panel"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="6dp"
+                android:text="分组"
+                android:textColor="@color/text2"
+                android:textSize="11sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/liveGroups"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="6dp"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/channelPanel"
+            android:layout_width="380dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/bg_panel"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="6dp">
+
+                <TextView
+                    android:id="@+id/liveGroupTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/text"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/liveGroupCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text2"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/liveChannelList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/livePanelSpacer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/liveNumberHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/bg_panel"
+        android:paddingStart="26dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="26dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/accent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/liveLoading"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/accent" />
+
+    <TextView
+        android:id="@+id/liveEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:textColor="@color/text2"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <!-- 底部工具栏：左侧频道信息 + 右侧 主页/设置/线路/解码/内核（参考电视之家排版） -->
+    <LinearLayout
+        android:id="@+id/liveBottomInfo"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_gravity="bottom"
+        android:background="#F2000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="22dp"
+        android:paddingEnd="14dp">
+
+        <LinearLayout
+            android:id="@+id/liveInfoBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveChannelName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/liveHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="数字键换台 · 菜单键 工具栏 · 返回退出"
+                android:textColor="@color/text2"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liveBtnSource"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveSourceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="线路"
+                android:textColor="@color/text2"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/liveBtnSourceValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:text="1905"
+                android:textColor="@color/text"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/liveBtnChannelSource"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveChannelSourceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="源"
+                android:textColor="@color/text2"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/liveChannelSourceValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="1/1"
+                android:textColor="@color/text"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/liveBtnDecode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveDecodeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="解码"
+                android:textColor="@color/text2"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/liveBtnDecodeValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="自动"
+                android:textColor="@color/text"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/liveBtnKernel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveKernelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="内核"
+                android:textColor="@color/text2"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/liveBtnKernelValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="Media3"
+                android:textColor="@color/text"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/liveBtnCast"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/liveCastLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="投屏"
+                android:textColor="@color/text2"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/liveCastValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="未投屏"
+                android:textColor="@color/text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/liveBtnHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="主页"
+            android:textColor="@color/text"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="28dp"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/liveBtnSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_menu_item"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/text"
+            android:textSize="14sp" />
+    </LinearLayout>
+</FrameLayout>

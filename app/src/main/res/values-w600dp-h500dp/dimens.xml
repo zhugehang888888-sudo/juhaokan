@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 电视 / 大屏（可用宽度 >=600dp 且高度 >=500dp） -->
+    <dimen name="rail_width">172dp</dimen>
+    <dimen name="rail_pad_h">14dp</dimen>
+    <dimen name="rail_pad_top">24dp</dimen>
+    <dimen name="rail_pad_bottom">14dp</dimen>
+    <dimen name="brand_size">24sp</dimen>
+    <dimen name="brand_sub_size">10sp</dimen>
+    <dimen name="brand_sub_margin_bottom">18dp</dimen>
+    <dimen name="nav_text_size">15sp</dimen>
+    <dimen name="nav_pad_v">11dp</dimen>
+    <dimen name="nav_pad_h">14dp</dimen>
+    <dimen name="nav_drawable_pad">13dp</dimen>
+    <dimen name="content_pad_h">28dp</dimen>
+    <dimen name="content_pad_top">22dp</dimen>
+    <dimen name="content_pad_bottom">6dp</dimen>
+    <dimen name="page_title_size">26sp</dimen>
+    <dimen name="clock_size">22sp</dimen>
+    <dimen name="clock_date_size">11sp</dimen>
+    <dimen name="detail_pad_h">44dp</dimen>
+    <dimen name="detail_pad_top">30dp</dimen>
+    <dimen name="search_pad_h">46dp</dimen>
+    <dimen name="search_pad_top">34dp</dimen>
+    <dimen name="settings_pad_h">40dp</dimen>
+    <dimen name="settings_pad_top">34dp</dimen>
+    <dimen name="panel_width">560dp</dimen>
+    <dimen name="settings_col_width">860dp</dimen>
+    <dimen name="settings_group_gap">30dp</dimen>
+    <dimen name="setting_row_min_height">64dp</dimen>
+</resources>

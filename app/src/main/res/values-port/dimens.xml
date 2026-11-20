@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 手机竖屏：菜单栏收窄但保证「图标 + 两字」同行显示，并把菜单项铺满竖向空间 -->
+    <dimen name="rail_width">100dp</dimen>
+    <dimen name="rail_pad_h">5dp</dimen>
+    <dimen name="rail_pad_top">8dp</dimen>
+    <dimen name="rail_pad_bottom">6dp</dimen>
+    <dimen name="brand_size">17sp</dimen>
+    <dimen name="brand_sub_size">8sp</dimen>
+    <dimen name="brand_sub_margin_bottom">6dp</dimen>
+    <dimen name="nav_text_size">12sp</dimen>
+    <dimen name="nav_pad_v">7dp</dimen>
+    <dimen name="nav_pad_h">6dp</dimen>
+    <dimen name="nav_drawable_pad">7dp</dimen>
+    <dimen name="content_pad_h">10dp</dimen>
+    <dimen name="content_pad_top">10dp</dimen>
+    <dimen name="page_title_size">18sp</dimen>
+    <dimen name="clock_size">13sp</dimen>
+    <dimen name="detail_pad_h">14dp</dimen>
+    <dimen name="detail_pad_top">12dp</dimen>
+    <dimen name="setting_row_min_height">54dp</dimen>
+</resources>

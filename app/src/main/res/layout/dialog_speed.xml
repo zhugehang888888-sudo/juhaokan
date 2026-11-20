@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自定义倍速：遥控器可用（左右调数值、上下到按钮、确认/取消） -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义倍速"
+        android:textColor="@color/text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="范围 0.10 – 8.00，左右键微调"
+        android:textColor="#76838F"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnMinus"
+            android:layout_width="56dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_select"
+            android:clickable="true"
+            android:focusable="true"
+        android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:nextFocusDown="@id/btnOk"
+            android:nextFocusRight="@id/tvSpeedValue"
+            android:text="−"
+            android:textColor="@color/text"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvSpeedValue"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_select_active"
+            android:clickable="true"
+            android:focusable="true"
+        android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:nextFocusDown="@id/btnOk"
+            android:nextFocusLeft="@id/btnMinus"
+            android:nextFocusRight="@id/btnPlus"
+            android:text="1.00×"
+            android:textColor="@color/accent"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnPlus"
+            android:layout_width="56dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_select"
+            android:clickable="true"
+            android:focusable="true"
+        android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:nextFocusDown="@id/btnOk"
+            android:nextFocusLeft="@id/tvSpeedValue"
+            android:text="+"
+            android:textColor="@color/text"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnCancel"
+            style="@style/ActionButtonCompact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusLeft="@id/btnMinus"
+            android:nextFocusRight="@id/btnOk"
+            android:nextFocusUp="@id/tvSpeedValue"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/btnOk"
+            style="@style/ActionButtonCompact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:nextFocusLeft="@id/btnCancel"
+            android:nextFocusRight="@id/btnPlus"
+            android:nextFocusUp="@id/tvSpeedValue"
+            android:text="确定"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

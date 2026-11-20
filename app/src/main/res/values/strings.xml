@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">剧好看</string>
+    <string name="nav_search">搜索</string>
+    <string name="nav_movie">电影</string>
+    <string name="nav_tv">剧集</string>
+    <string name="nav_live">直播</string>
+    <string name="nav_anime">动漫</string>
+    <string name="nav_show">综艺</string>
+    <string name="nav_continue">回看</string>
+    <string name="nav_favorite">收藏</string>
+    <string name="nav_settings">设置</string>
+    <string name="loading">加载中…</string>
+    <string name="empty">暂无内容</string>
+    <string name="play">播放</string>
+    <string name="favorite">收藏</string>
+    <string name="favorited">已收藏</string>
+    <string name="source">换源</string>
+    <string name="episodes">选集</string>
+    <string name="speed">倍速</string>
+    <string name="settings">设置</string>
+</resources>

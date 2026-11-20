@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 手机 / 小屏默认值 -->
+    <dimen name="rail_width">128dp</dimen>
+    <dimen name="rail_pad_h">8dp</dimen>
+    <dimen name="rail_pad_top">10dp</dimen>
+    <dimen name="rail_pad_bottom">6dp</dimen>
+    <dimen name="brand_size">18sp</dimen>
+    <dimen name="brand_sub_size">9sp</dimen>
+    <dimen name="brand_sub_margin_bottom">8dp</dimen>
+    <dimen name="nav_text_size">12sp</dimen>
+    <dimen name="nav_pad_v">6dp</dimen>
+    <dimen name="nav_pad_h">13dp</dimen>
+    <dimen name="nav_drawable_pad">9dp</dimen>
+    <dimen name="content_pad_h">14dp</dimen>
+    <dimen name="content_pad_top">12dp</dimen>
+    <dimen name="content_pad_bottom">6dp</dimen>
+    <dimen name="page_title_size">20sp</dimen>
+    <dimen name="clock_size">15sp</dimen>
+    <dimen name="clock_date_size">9sp</dimen>
+    <dimen name="detail_pad_h">16dp</dimen>
+    <dimen name="detail_pad_top">14dp</dimen>
+    <dimen name="search_pad_h">16dp</dimen>
+    <dimen name="search_pad_top">14dp</dimen>
+    <dimen name="settings_pad_h">16dp</dimen>
+    <dimen name="settings_pad_top">16dp</dimen>
+    <dimen name="panel_width">300dp</dimen>
+    <!-- 设置页分组卡片 -->
+    <dimen name="settings_col_width">860dp</dimen>
+    <dimen name="settings_group_gap">24dp</dimen>
+    <dimen name="setting_row_min_height">56dp</dimen>
+</resources>
