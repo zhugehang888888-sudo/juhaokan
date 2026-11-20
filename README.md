@@ -8,6 +8,11 @@
 > 使用前请自行部署 **MoonTV / MoonTVPlus** 服务端（同样兼容使用同一套 API 的其他自建服务），
 > 在登录页填写地址与账号即可使用。
 
+## 下载
+
+- **直接安装（无品牌版，不含任何品牌信息）**：[juhaokan-1.8.8-clean.apk](../../releases/download/v1.8.8/juhaokan-1.8.8-clean.apk)
+- 历史版本与更新说明：[Releases](../../releases)
+
 ![首页](docs/screenshots/02-home.png)
 
 ## 功能
